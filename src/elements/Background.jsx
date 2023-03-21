@@ -16,15 +16,29 @@ const Svg = styled.svg`
 const PointsUp = styled(Points)`
   position: fixed;
   z-index: 1;
-  top: 2.5rem; /* 40px */
-  left: 2.5rem; /* 40px */
+  top: 0px; 
+  left: 20px; 
+  width: 80px;
+  font-weight: bold;
+
+  @media screen and (max-width: 1115px) {
+       display: none;
+    }
+    
 `;
 
 const PointsDown = styled(Points)`
   position: fixed;
   z-index: 1;
-  bottom: 2.5rem; /* 40px */
-  right: 2.5rem; /* 40px */
+  bottom: 0px; 
+  right: 20px;
+  width: 80px;
+  font-weight: bold;
+
+  @media screen and (max-width: 1115px) {
+       display: none;
+    }
+    
 `;
 
 const Background = () => {

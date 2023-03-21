@@ -98,7 +98,7 @@ function ExpenseList() {
         {expenses.length === 0 && (
           <ContainerSubtitle>
             <Subtitle>No hay gastos por mostrar</Subtitle>
-            <Button as={Link} to="/">
+            <Button as={Link} to="/" >
               Agregar Gastos
             </Button>
           </ContainerSubtitle>

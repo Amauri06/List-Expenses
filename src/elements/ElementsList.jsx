@@ -155,6 +155,9 @@ const Subtitle = styled.h3`
     font-weight: 400;
     font-size: 40px;
     padding: 2.5rem 0; /* 40px */
+    text-align: center;
+
+
 `;
  
 const ContainerButtonCenter = styled.div`

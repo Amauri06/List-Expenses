@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import theme from '../theme';
 import convertAmount from '../Functions/convertCurrency';
@@ -16,23 +16,26 @@ const BarContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
  
-    @media(max-width: 31.25rem) { /* 500px */
+    @media(max-width: 521px) { /* 500px */
         flex-direction: column;
         font-size: 14px;
     }
-    
-    @media(max-width: 769px){
-      padding-top: 15px 
-        
-      }  
-      
 
+    @media(max-width: 480px) { 
+        
+        font-size: 16px;
+       margin-bottom: 80px;
+    }
+    
 `;
 
 function BarSpent() {
 
  const {total} = useTotalExpense();
+
+
  
   return (
     <BarContainer>

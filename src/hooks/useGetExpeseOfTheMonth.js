@@ -7,7 +7,8 @@ import {useAuth} from '../context/AuthContex'
 
 const useGetExpenseOfTheMonth = () => {
     const [expenses, setExpenses] = useState([]);
-
+     
+   
     const {user} =  useAuth();
     
 
@@ -15,8 +16,9 @@ const useGetExpenseOfTheMonth = () => {
 
         const startMonth = getUnixTime(startOfMonth(new Date()));
         const endMonth = getUnixTime(endOfMonth(new Date()));
+        
 
-            if(user){
+            if(user){ 
 
                 //consulta
                 const q = query(collection(db, "expenses"),

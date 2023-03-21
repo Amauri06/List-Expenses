@@ -1,6 +1,7 @@
 import React,{createContext,useContext,useState, useEffect} from 'react'
 import useGetExpenseOfTheMonth from '../hooks/useGetExpeseOfTheMonth'
 
+
 export const TotalExpenseContext = createContext()
 
 //hook personalizado
@@ -9,23 +10,35 @@ export const useTotalExpense = () =>{
 } 
 
 function TotalExpenseProvider({children}) {
-    const [total, setTotal] = useState(0)
-    const expenses = useGetExpenseOfTheMonth();
+    
+  const [total, setTotal] = useState(0)
+  const expensesMonth = useGetExpenseOfTheMonth();
+ 
+  
+  useEffect(()=>{
+    
 
-    useEffect(()=>{
       let acumulated = 0;
-     
-      expenses.forEach(expense=>{
-       acumulated +=  expense.amount;
-        
-       setTotal(acumulated)
-      })
+ 
+         
+        if(expensesMonth.length > 0){
+
+              expensesMonth.forEach(expense => {
+
+                 acumulated +=  expense.amount;  
+              
+            })  
+            
+            
+          }  
       
-      
-      }, [expenses])
+          setTotal(acumulated) 
+
+       
+    }, [expensesMonth])
 
   return (
-    <TotalExpenseContext.Provider value={{total}}>
+    <TotalExpenseContext.Provider value={{total, setTotal}}>
         {children}
     </TotalExpenseContext.Provider>     
   )

@@ -12,6 +12,8 @@
     "@svgr/core": "^6.5.1",
     "date-fns": "^2.29.3",
     "firebase": "^9.17.1",
+    "gh-pages": "^5.0.0",
+    "http-server": "^14.1.1",
     "react": "^18.2.0",
     "react-day-picker": "^8.6.0",
     "react-dom": "^18.2.0",

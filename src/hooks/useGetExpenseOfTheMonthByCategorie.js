@@ -9,14 +9,14 @@ const [expenseByCatogiere, setExpenseByCategorie] = useState([]);
    const expenses = useGetExpenseOfTheMonth();
    
    useEffect(()=>{
-
+      
     const sumOfExpenses = expenses.reduce((objAcc, objCurrent)=>{
         const categorieCurrent = objCurrent.categorie;
         const amountCurrent = objCurrent.amount;
       
         objAcc[categorieCurrent] += amountCurrent
          
-        
+      
         return objAcc
          
       }, {

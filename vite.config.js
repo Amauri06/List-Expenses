@@ -1,9 +1,13 @@
 
 import svgr from 'vite-plugin-svgr'
 
+
 export default {
   // ...
   plugins: [svgr()],
+  server:{
+    host: true
+  }
   // ...
 }
 

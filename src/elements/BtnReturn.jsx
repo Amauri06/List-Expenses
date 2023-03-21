@@ -12,7 +12,7 @@ const Btn = styled.button`
     text-align: center;
     margin-right: 1.25rem; /* 20px */
     border: none;
-    background: #000;
+    background: #010a44;
     color: #fff;
     display: flex;
     align-items: center;

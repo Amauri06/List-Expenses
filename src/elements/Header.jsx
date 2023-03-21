@@ -1,26 +1,41 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Header = styled.div`
     width: 100%;
-    padding: 2.5rem; /* 40px */
+    padding: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
- 
-    @media(max-width: 60rem){ /* 950px */
-        justify-content: start;
+    min-width: 100%;
+
+    @media screen and (max-width: 920px) {
+        height: 15%;  
+        min-width: 80%; 
     }
+   
 `;
  
 const Title = styled.h1`
-    font-weight: normal;
+    font-weight:800;
+    letter-spacing: 5;
     text-transform: uppercase;
-    font-size: 2.5rem; /* 40px */
- 
-    @media(max-width: 60rem){ /* 950px */
-        font-size: 2rem; /* 32px */
-    }
+    font-size: 32px; 
+  
 
+    
+    
+    @media(max-width: 920px){ 
+        margin-bottom: 20px;
+    }
+    
+    @media(max-width: 480px){ 
+        font-size: 28px;
+        letter-spacing: 4;
+        text-align: center;
+     
+    }
+    
+    
     
 `;
  
@@ -28,19 +43,22 @@ const ContainerHeader = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 480px) {
+        padding: 0px  25px 25px 25px;
+       
+   }
+     
+
  
-    @media(max-width: 60rem){ /* 950px */
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
- 
-        & > div {
-            display: flex;
-            margin-bottom: 1.25rem; /* 20px */
-            justify-content: end;
-        }
-    }
-    
+@media(max-width: 920px){ 
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+   
+}
+   
     
 `;
  
@@ -48,12 +66,12 @@ const ContainerButtons = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @media (max-width: 769px) {
-        width: 350px;
-        margin-top: 15px;
-    }  
-
+   
+    
+    
 `;
 
 export {Header, Title, ContainerHeader, ContainerButtons};
+
+
+

@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #F9F9F9;
+  background: #ecf0f3;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -19,10 +19,20 @@ body {
 
 #root {
   width: 100%;
+  
 }
 
-@media screen and (max-width: 60rem){ /* 950px */
+
+@media screen and (max-width: 920px){ 
   :root {
       font-size: 14px;
+      
+  }
+}
+
+@media screen and (max-width: 480px){ 
+  body {
+     height: 100%;
+      
   }
 }

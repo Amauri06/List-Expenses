@@ -23,8 +23,6 @@ function ExpenseForm({ expense }) {
   const [inputAmount, setInputAmount] = useState("");
   const [categorie, setCategorie] = useState("Hogar");
   const [date, setDate] = useState(new Date());
-  const [visibility, setVisibility] = useState(false);
-  const [showSelect, setShowSelect] = useState(false);
   const [alertState, setAlertState] = useState(false);
   const [alert, setAlert] = useState({});
 
@@ -50,18 +48,14 @@ function ExpenseForm({ expense }) {
     }
   }, [expense, user, navigate]);
 
+
   const handleChange = (e) => {
     if (e.target.name === "description") {
       setInputDescription(e.target.value);
     } else if (e.target.name === "amount") {
       setInputAmount(e.target.value.replace(/[^0-9.]/g, ""));
     }
-    // al escribir en el input oculte automaticamente el spiker y las categorias
-    if (visibility) {
-      setVisibility(!visibility);
-    } else if (showSelect) {
-      setShowSelect(!showSelect);
-    }
+    
   };
 
   const handleSubmit = (e) => {
@@ -145,19 +139,16 @@ function ExpenseForm({ expense }) {
   return (
     <Form onSubmit={handleSubmit}>
       <ContainerFilters>
-        <DatePicker
-          date={date}
-          setDate={setDate}
-          visibility={visibility}
-          setVisibility={setVisibility}
-        />
-
         <SelectCategories
           categorie={categorie}
           setCategorie={setCategorie}
-          showSelect={showSelect}
-          setShowSelect={setShowSelect}
         />
+        <DatePicker
+          date={date}
+          setDate={setDate}
+
+        />
+
       </ContainerFilters>
       <div>
         <Input
@@ -165,14 +156,20 @@ function ExpenseForm({ expense }) {
           name="description"
           placeholder="Descripcion"
           value={inputDescription}
-          onChange={handleChange}
+          onChange={handleChange} 
+          expense
+          
+          
         />
         <InputLarge
+          className="home"
           type="text"
           name="amount"
           placeholder="0,00"
           value={inputAmount}
           onChange={handleChange}
+          expense
+          
         />
       </div>
       <ContainerButton>

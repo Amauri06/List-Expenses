@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  {useState, useRef, useEffect} from 'react';
 import { DayPicker } from 'react-day-picker';
 import { es } from 'date-fns/locale';
 import 'react-day-picker/dist/style.css';
@@ -9,23 +9,27 @@ import theme from '../theme';
 
 const InputContainer = styled.div`
     position: relative;
- 
+    
+   
+  
     input {
         font-family: 'Work Sans', sans-serif;
         box-sizing: border-box;
         background: ${theme.grisClaro};
         border: none;
         cursor: pointer;
-        border-radius: 0.625rem; /* 10px */
-        height: 5rem; /* 80px */
+        border-radius: 10px; /* 10px */
+        height: 50px;
         width: 100%;
-        padding: 0 1.25rem; /* 20px */
-        font-size: 1.5rem; /* 24px */
+        padding: 18px;
+        font-size: 23px; /* 24px */
         text-align: center;
         display: flex;
         align-items: center;
         justify-content: center;
         outline: none;
+        
+  
     }
  
     .rdp {
@@ -40,34 +44,44 @@ const InputContainer = styled.div`
     .rdp-month {
         background: #fff;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        padding: 20px;
+        padding: 10px;
         border-radius: 10px;
+    
     }
- 
-    @media (max-width: 60rem) {
-        /* 950px */
-        & > * {
-            width: 100%;
-        }
-    }
+   
 
-    @media(max-width: 769px){
-      z-index:10;
-        padding: 200px, 0px, 200px, 0px;
-      }  
+    
       
-    }
-`;
+`
 
 const formatDate = (date = new Date()) =>{
  return  format(date, `dd 'de' MMMM 'de' yyyy`, {locale: es})
 }
 
-function DatePicker({date, setDate, setVisibility, visibility}) {
+function DatePicker({date, setDate }) {
+  const [visibility, setVisibility] = useState(false);
+  const dateSpickerRef = useRef();
+
+  useEffect(()=>{
+
+    const handleClick = (e)=>{
+  
+      if(!dateSpickerRef.current.contains(e.target)){
+          setVisibility(false)
+      }
+       
+    }
+     document.addEventListener("click", handleClick)
+  
+     return () => {
+       document.removeEventListener("click", handleClick);
+     }
+  
+  }, [visibility])
   
 
   return (  
-    <InputContainer>
+    <InputContainer ref={dateSpickerRef}>
       <input 
          type="text" 
          readOnly 

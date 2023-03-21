@@ -118,7 +118,7 @@ function UserRegister() {
         <ContainerHeader>
           <Title>Crear Cuenta</Title>
           <div>
-            <Button to="/iniciar-sesion">Iniciar Sesion</Button>
+            <Button secundario to="/iniciar-sesion">Iniciar Sesion</Button>
           </div>
         </ContainerHeader>
       </Header>
@@ -130,6 +130,8 @@ function UserRegister() {
           placeholder="Correo Electronico"
           value={email}
           onChange={handleChange}
+          className="user"
+          
         />
         <Input
           type="password"
@@ -137,6 +139,8 @@ function UserRegister() {
           placeholder="Contraseña"
           value={password}
           onChange={handleChange}
+          className="user"
+          
         />
         <Input
           type="password"
@@ -144,6 +148,9 @@ function UserRegister() {
           placeholder="Repetir Contraseña"
           value={password2}
           onChange={handleChange}
+          className="user"
+          
+          
         />
         <ContainerButton>
           <Button as="button" primario>

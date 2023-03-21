@@ -18,8 +18,8 @@ function ExpensesCategory() {
       </Helmet>
 
       <Header>
-        <BtnReturn />
-        <Title> Gastos por Categorias</Title>
+        <BtnReturn btn/>
+        <Title categoria> Gastos por Categorias</Title>
       </Header>
 
     <CategoryList>

@@ -20,7 +20,7 @@ function BtnLogout() {
 
   return (
     //se comportara como un boton no como un Link
-    <Button largeIcon as="button" onClick={Logout}>
+    <Button largeIcon as="button" onClick={Logout} logout>
       <IconLogout />
     </Button>
   );

@@ -102,9 +102,9 @@ function Login() {
       </Helmet>
       <Header>
         <ContainerHeader>
-          <Title>Ininiciar Sesion</Title>
+          <Title>Iniciar Sesion</Title>
           <div>
-            <Button to="/crear-cuenta">Registrarse</Button>
+            <Button secundario to="/crear-cuenta" >Registrarse</Button>
           </div>
         </ContainerHeader>
       </Header>
@@ -116,6 +116,8 @@ function Login() {
           placeholder="Correo Electronico" 
           value={email}
           onChange={handleChange}
+          className="user"
+          
           />
         <Input 
           type="password" 
@@ -123,6 +125,8 @@ function Login() {
           placeholder="Contraseña"
           value={password} 
           onChange={handleChange}
+          className="user"
+          
           
           />
         <ContainerButton>
